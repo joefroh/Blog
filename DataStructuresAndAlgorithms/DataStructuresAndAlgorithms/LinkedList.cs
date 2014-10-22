@@ -3,33 +3,33 @@
 namespace DataStructuresAndAlgorithms
 {
     /// <summary>
-    /// Doubly Linked List Implementation.
+    ///     Doubly Linked List Implementation.
     /// </summary>
     /// <typeparam name="T">The type of data the list is storing.</typeparam>
     public class LinkedList<T>
     {
         /// <summary>
-        /// Private variable to keep track internally of where we are in traversing the list.
+        ///     Private variable to keep track internally of where we are in traversing the list.
         /// </summary>
         private Node<T> _currentNode;
 
         /// <summary>
-        /// Private variable to keep track of the head (front) of the list.
+        ///     Private variable to keep track of the head (front) of the list.
         /// </summary>
         private Node<T> _headNode;
 
         /// <summary>
-        /// Private variable to keep track of the tail (end) of the list.
+        ///     Private variable to keep track of the tail (end) of the list.
         /// </summary>
         private Node<T> _tailNode;
 
         /// <summary>
-        /// Property that keeps track of how large the list is.
+        ///     Property that keeps track of how large the list is.
         /// </summary>
         public int Length { get; private set; }
 
         /// <summary>
-        /// Method that adds a given value to the list.
+        ///     Method that adds a given value to the list.
         /// </summary>
         /// <param name="value">The value to be added to the list.</param>
         public void Add(T value)
@@ -48,8 +48,9 @@ namespace DataStructuresAndAlgorithms
         }
 
         /// <summary>
-        /// Method that tries to remove a given value from the list. If the value isn't in the list, this method returns false. This method returns the first matching value in the list.
-        /// If data repeats, subsequent values are still present in the list.
+        ///     Method that tries to remove a given value from the list. If the value isn't in the list, this method returns false.
+        ///     This method returns the first matching value in the list.
+        ///     If data repeats, subsequent values are still present in the list.
         /// </summary>
         /// <param name="value">The value to be removed from the list.</param>
         /// <returns>True if the value was found and removed. False otherwise.</returns>
@@ -95,7 +96,7 @@ namespace DataStructuresAndAlgorithms
         }
 
         /// <summary>
-        /// Removes a given indexed value from the list.
+        ///     Removes a given indexed value from the list.
         /// </summary>
         /// <param name="index">The index position to be removed.</param>
         /// <returns>True if the index was in range and removed, false otherwise.</returns>
@@ -163,7 +164,7 @@ namespace DataStructuresAndAlgorithms
         }
 
         /// <summary>
-        /// Returns the value stored at a given index in the list.
+        ///     Returns the value stored at a given index in the list.
         /// </summary>
         /// <param name="index">The index to be retrieved.</param>
         /// <returns>The value stored at a given index in the list.</returns>
