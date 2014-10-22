@@ -41,9 +41,19 @@ namespace DataStructuresAndAlgorithms
                 _currentNode = _headNode;
             }
 
-            _tailNode.Next = new Node<T>(value);
-            _tailNode.Next.Previous = _tailNode;
-            _tailNode = _tailNode.Next;
+            else if (Length == 1)
+            {
+                _tailNode.Next = new Node<T>(value);
+                _tailNode.Next.Previous = _tailNode;
+                _tailNode = _tailNode.Next;
+                _headNode.Next = _tailNode;
+            }
+            else
+            {
+                _tailNode.Next = new Node<T>(value);
+                _tailNode.Next.Previous = _tailNode;
+                _tailNode = _tailNode.Next;
+            }
             Length++;
         }
 
@@ -87,9 +97,10 @@ namespace DataStructuresAndAlgorithms
                         _currentNode.Next = null;
                         _currentNode.Previous = null;
                     }
+                    Length--;
+                    return true;
                 }
-                Length--;
-                return true;
+                _currentNode = _currentNode.Next;
             }
 
             return false;
@@ -158,6 +169,7 @@ namespace DataStructuresAndAlgorithms
                 {
                     return i;
                 }
+                _currentNode = _currentNode.Next;
             }
 
             return -1;
