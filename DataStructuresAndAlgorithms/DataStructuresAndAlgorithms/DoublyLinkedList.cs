@@ -6,7 +6,7 @@ namespace DataStructuresAndAlgorithms
     ///     Doubly Linked List Implementation.
     /// </summary>
     /// <typeparam name="T">The type of data the list is storing.</typeparam>
-    public class LinkedList<T>
+    public class DoublyLinkedList<T>
     {
         /// <summary>
         ///     Private variable to keep track internally of where we are in traversing the list.
@@ -155,7 +155,7 @@ namespace DataStructuresAndAlgorithms
         }
 
         /// <summary>
-        ///     Searches the LinkedList and returns the index of the value being searched for.
+        ///     Searches the DoublyLinkedList and returns the index of the value being searched for.
         /// </summary>
         /// <param name="value">The value being searched for.</param>
         /// <returns>The index of the value being searched for or -1 if the value is not found.</returns>
