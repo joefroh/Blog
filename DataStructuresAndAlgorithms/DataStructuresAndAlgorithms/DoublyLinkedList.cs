@@ -6,7 +6,7 @@ namespace DataStructuresAndAlgorithms
     ///     Doubly Linked List Implementation.
     /// </summary>
     /// <typeparam name="T">The type of data the list is storing.</typeparam>
-    public class DoublyLinkedList<T>
+    public class DoublyLinkedList<T> : ILinkedList<T>
     {
         /// <summary>
         ///     Private variable to keep track internally of where we are in traversing the list.

@@ -1,39 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataStructuresAndAlgorithms
+﻿namespace DataStructuresAndAlgorithms
 {
     public class Node<T>
     {
-        private Node<T> _previous ;
-        private Node<T> _next;
-        private T _data;
-
         public Node(T data)
         {
-            _data = data;
+            Data = data;
         }
 
-        public Node<T> Next
-        {
-            get { return _next; }
-            set { _next = value; }
-        }
+        public Node<T> Next { get; set; }
 
-        public Node<T> Previous
-        {
-            get { return _previous; }
-            set { _previous = value; }
-        }
+        public Node<T> Previous { get; set; }
 
-        public T Data
-        {
-            get { return _data; }
-            set { _data = value; }
-        }
-
+        public T Data { get; set; }
     }
 }
