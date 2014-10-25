@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructuresAndAlgorithms
+namespace DataStructuresAndAlgorithms                                  
 {
     /// <summary>
     ///     Doubly Linked List Implementation.
