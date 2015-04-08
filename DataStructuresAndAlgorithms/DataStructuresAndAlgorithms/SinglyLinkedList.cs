@@ -29,15 +29,15 @@ namespace DataStructuresAndAlgorithms
             }
             else if (Length == 1) //single item in list, head == tail
             {
-                _tailNode.Next = new Node<T>(value);
-                _headNode.Next = _tailNode.Next;
-                _tailNode = _tailNode.Next;
+                _tailNode.Right = new Node<T>(value);
+                _headNode.Right = _tailNode.Right;
+                _tailNode = _tailNode.Right;
                 Length++;
             }
             else
             {
-                _tailNode.Next = new Node<T>(value);
-                _tailNode = _tailNode.Next;
+                _tailNode.Right = new Node<T>(value);
+                _tailNode = _tailNode.Right;
                 Length++;
             }
         }
@@ -63,7 +63,7 @@ namespace DataStructuresAndAlgorithms
                 {
                     return index;
                 }
-                _currentNode = _currentNode.Next;
+                _currentNode = _currentNode.Right;
                 index++;
             }
             return -1;
@@ -75,7 +75,7 @@ namespace DataStructuresAndAlgorithms
 
             for (int i = 0; i < index; i++)
             {
-                _currentNode = _currentNode.Next;
+                _currentNode = _currentNode.Right;
             }
             return _currentNode.Data;
         }

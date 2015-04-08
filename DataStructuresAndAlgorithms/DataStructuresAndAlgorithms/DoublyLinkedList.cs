@@ -43,16 +43,16 @@ namespace DataStructuresAndAlgorithms
 
             else if (Length == 1)
             {
-                _tailNode.Next = new Node<T>(value);
-                _tailNode.Next.Previous = _tailNode;
-                _tailNode = _tailNode.Next;
-                _headNode.Next = _tailNode;
+                _tailNode.Right = new Node<T>(value);
+                _tailNode.Right.Left = _tailNode;
+                _tailNode = _tailNode.Right;
+                _headNode.Right = _tailNode;
             }
             else
             {
-                _tailNode.Next = new Node<T>(value);
-                _tailNode.Next.Previous = _tailNode;
-                _tailNode = _tailNode.Next;
+                _tailNode.Right = new Node<T>(value);
+                _tailNode.Right.Left = _tailNode;
+                _tailNode = _tailNode.Right;
             }
             Length++;
         }
@@ -80,27 +80,27 @@ namespace DataStructuresAndAlgorithms
                     }
                     else if (_currentNode == _headNode) //head
                     {
-                        _headNode = _headNode.Next;
-                        _headNode.Previous.Next = null;
-                        _headNode.Previous = null;
+                        _headNode = _headNode.Right;
+                        _headNode.Left.Right = null;
+                        _headNode.Left = null;
                     }
                     else if (_currentNode == _tailNode) //tail
                     {
-                        _tailNode = _tailNode.Previous;
-                        _tailNode.Next.Previous = null;
-                        _tailNode.Next = null;
+                        _tailNode = _tailNode.Left;
+                        _tailNode.Right.Left = null;
+                        _tailNode.Right = null;
                     }
                     else
                     {
-                        _currentNode.Previous.Next = _currentNode.Next;
-                        _currentNode.Next.Previous = _currentNode.Previous;
-                        _currentNode.Next = null;
-                        _currentNode.Previous = null;
+                        _currentNode.Left.Right = _currentNode.Right;
+                        _currentNode.Right.Left = _currentNode.Left;
+                        _currentNode.Right = null;
+                        _currentNode.Left = null;
                     }
                     Length--;
                     return true;
                 }
-                _currentNode = _currentNode.Next;
+                _currentNode = _currentNode.Right;
             }
 
             return false;
@@ -121,7 +121,7 @@ namespace DataStructuresAndAlgorithms
             _currentNode = _headNode;
             for (int i = 0; i < index; i++) //set current node to point to the index in question
             {
-                _currentNode = _currentNode.Next;
+                _currentNode = _currentNode.Right;
             }
 
             if (Length == 1) //there is only one thing in the list
@@ -132,22 +132,22 @@ namespace DataStructuresAndAlgorithms
             }
             else if (index == 0) //head
             {
-                _headNode = _headNode.Next;
-                _headNode.Previous.Next = null;
-                _headNode.Previous = null;
+                _headNode = _headNode.Right;
+                _headNode.Left.Right = null;
+                _headNode.Left = null;
             }
             else if (index == Length - 1) //tail
             {
-                _tailNode = _tailNode.Previous;
-                _tailNode.Next.Previous = null;
-                _tailNode.Next = null;
+                _tailNode = _tailNode.Left;
+                _tailNode.Right.Left = null;
+                _tailNode.Right = null;
             }
             else
             {
-                _currentNode.Previous.Next = _currentNode.Next;
-                _currentNode.Next.Previous = _currentNode.Previous;
-                _currentNode.Next = null;
-                _currentNode.Previous = null;
+                _currentNode.Left.Right = _currentNode.Right;
+                _currentNode.Right.Left = _currentNode.Left;
+                _currentNode.Right = null;
+                _currentNode.Left = null;
             }
 
             Length--;
@@ -169,7 +169,7 @@ namespace DataStructuresAndAlgorithms
                 {
                     return i;
                 }
-                _currentNode = _currentNode.Next;
+                _currentNode = _currentNode.Right;
             }
 
             return -1;
@@ -190,7 +190,7 @@ namespace DataStructuresAndAlgorithms
             _currentNode = _headNode;
             for (int i = 0; i < index; i++) //set currentNode to point to the index requested
             {
-                _currentNode = _currentNode.Next;
+                _currentNode = _currentNode.Right;
             }
 
             return _currentNode.Data;

@@ -21,9 +21,9 @@ namespace DataStructuresAndAlgorithmsTests
             var node = new Node<int>(3);
             var nextNode = new Node<int>(6);
 
-            node.Next = nextNode;
+            node.Right = nextNode;
 
-            Assert.AreEqual(nextNode, node.Next);
+            Assert.AreEqual(nextNode, node.Right);
         }
 
         [TestMethod]
@@ -32,9 +32,9 @@ namespace DataStructuresAndAlgorithmsTests
             var node = new Node<int>(4);
             var prevNode = new Node<int>(67);
 
-            node.Previous = prevNode;
+            node.Left = prevNode;
 
-            Assert.AreEqual(prevNode, node.Previous);
+            Assert.AreEqual(prevNode, node.Left);
         }
 
         [TestMethod]
